@@ -33,13 +33,14 @@ public class Task1Test extends Assert {
     public void StartTest() {
         logger.info("Test start");
         driver.get(cfg.url());
-        try {
+        assertEquals("test failed", driver.getTitle(), cfg.otusTitle());
+        /*try {
             assertEquals(driver.getTitle(), cfg.otusTitle());
             logger.info("Test passed, title is " + driver.getTitle());
         } catch(AssertionError e){
             logger.info("Test failed, title is " + driver.getTitle());
             throw e;
-        }
+        }*/
         logger.info("Test finish");
     }
 
